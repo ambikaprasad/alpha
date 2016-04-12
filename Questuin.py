@@ -4,6 +4,8 @@ Questype=((1,'MCQ Single Correct'),(2,'MCQ multiple correct'),(3,'Group MCQ sing
 
 Category Model:
   name=
+  parent=
+
 Tag Model:
   name=
 
@@ -11,20 +13,21 @@ Tag Model:
 Question model:
   Questype = 
   Question =
+  ParentQuestion =
   category = m2m
   Tag = m2m
   added_date =
   added_by =
   status =
   correct_answer = 
+  taguser= m2m
 
 option model:
+  
   question=
   option=
 
-QuestionUser:
-  question=
-  user=
+
 
 
 
