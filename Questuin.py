@@ -9,14 +9,14 @@ Tag Model:
 
 
 Question model:
-  Questype =
+  Questype = 
   Question =
-  category =
+  category = m2m
   Tag = m2m
   added_date =
   added_by =
   status =
-  correct_answer =
+  correct_answer = 
 
 option model:
   question=
