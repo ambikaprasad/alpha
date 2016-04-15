@@ -5,6 +5,6 @@ urlpatterns = patterns('tutorials.views',
     # Examples:
     #url(r'^tutorials/$', 'tutorials', name='tutorials'),
     url(r'^$', TemplateView.as_view(template_name='questionmanager/index.html'), name="home"),
-    url(r'^$', TemplateView.as_view(template_name='questionmanager/categories.html'), name="category"),
+    url(r'^category/$', TemplateView.as_view(template_name='questionmanager/categories.html'), name="category"),
     )
 
