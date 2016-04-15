@@ -1,0 +1,14 @@
+#
+####### requirements.txt #######
+
+wsgiref == 0.1.2
+setuptools == 20.7.0
+pip == 8.1.1
+argparse == 1.4.0
+Django == 1.9.5
+MySQL-python == 1.2.5
+Pillow == 3.2.0
+
+
+
+
