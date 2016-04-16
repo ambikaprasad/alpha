@@ -18,7 +18,7 @@ class TagAdmin(admin.ModelAdmin):
         obj.save()
 
 class QuestionManagerAdmin(admin.ModelAdmin):
-    list_display = ('questype','question','parentquestion','category','tag','status','correct_answer','explanation','user','slug','default_marks','random_option','added_date','added_by')
+    list_display = ('questype','question','parentquestion','status','correct_answer','explanation','default_marks','random_option','added_date','added_by')
     search_fields = ('question',)
     exclude = ('slug','added_by')
     def save_model(self, request, obj, form, change):
@@ -26,7 +26,7 @@ class QuestionManagerAdmin(admin.ModelAdmin):
         obj.save()
 class OptionAdmin(admin.ModelAdmin):
     list_display = ('question','option','active')
-    search_fields = ('question__question')
+    search_fields = ('question__question',)
     exclude = ('slug','added_by')
 
 
