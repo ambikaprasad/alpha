@@ -4,7 +4,7 @@ from django.conf import settings
 from datetime import datetime
 
 class TagAdmin(admin.ModelAdmin):
-    list_display = ('name','description','slug','active','is_category','created_date','modified_date','added_by')
+    list_display = ('name','description','slug','active','created_date','modified_date','added_by')
     list_editable = ('active','slug')
     exclude = ('slug','added_by')
     search_fields = ('name',)
@@ -18,7 +18,7 @@ class TagAdmin(admin.ModelAdmin):
         obj.save()
 
 class QuestionManagerAdmin(admin.ModelAdmin):
-    list_display = ('questype','question','parentquestion','status','correct_answer','explanation','default_marks','random_option','added_date','added_by')
+    list_display = ('questype','question','parentquestion','active','correct_answer','explanation','default_marks','random_option','added_date','added_by')
     search_fields = ('question',)
     exclude = ('slug','added_by')
     def save_model(self, request, obj, form, change):

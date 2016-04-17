@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
     # Examples:
     #url(r'^tutorials/$', 'tutorials', name='tutorials'),
-    url(r'^$', TemplateView.as_view(template_name='questionmanager/index.html'), name="home"),
+    url(r'^$', views.QuestionView.as_view(), name="home"),
     url(r'^category/$', views.CategoryView.as_view(), name="category"),
+    url(r'^category/delete/(?P<tag>[-\d]+)/$', views.DeleteCategoryView, name="deletecategory"),
     ]
 

@@ -108,15 +108,15 @@
         <header class="demo-drawer-header">
           <img src="{% static 'images/user.jpg' %}" class="demo-avatar">
           <div class="demo-avatar-dropdown">
-            <span>hello@example.com</span>
+            <span>{{ user.username }}</span>
             <div class="mdl-layout-spacer"></div>
             <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
               <i class="material-icons" role="presentation">arrow_drop_down</i>
               <span class="visuallyhidden">Accounts</span>
             </button>
             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
-              <li class="mdl-menu__item">hello@example.com</li>
-              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item">{{ user.username }}</li>
+             <!-- <li class="mdl-menu__item">{{ user.username }}</li>-->
               <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
             </ul>
           </div>
@@ -330,6 +330,8 @@ Export Question
              </div>
   
          </div>
+
+
 {% endblock %}
  </div>
                 {% endblock %}
@@ -392,8 +394,12 @@ Export Question
       <!--<a href="https://github.com/google/material-design-lite/blob/master/templates/dashboard/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-color-text--white">View Source</a>-->
     {% block js %}
       <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
     {% endblock %}
     {% block extrajs %}
+
     {% endblock %}
   {% endblock %}
   </body>

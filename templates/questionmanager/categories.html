@@ -12,17 +12,7 @@
     </tr>
   </thead>
   <tbody>
-  {% for cat in category %}
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric" >{{ cat.name }}</td>
-      <td >{{ cat.activecount }}</td>
-      <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-  <i class="material-icons">edit</i>
-</button></td><td>
-</td>
-    </tr>
 
-  {% endfor %}
 
   {% for t in tag %}
     <tr>
@@ -30,9 +20,12 @@
       <td >{{ t.activecount }}</td>
       <td><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
   <i class="material-icons">edit</i>
-</button></td><td>
-</td>
-    </tr>
+
+</button></td><td><button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" onclick="return deletecat({{ t.pk }})">
+  <i class="material-icons">delete
+</i>
+</button></td>
+      </tr>
   {% endfor %}
   {% comment %}
     <tr>
@@ -59,3 +52,4 @@
   </tbody>
 </table>
      {% endblock %}
+
