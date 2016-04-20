@@ -1,4 +1,50 @@
 {% extends "base.html" %}
+{% block filtersection %}
+<div class=" mdl-shadow--2dp mdl-color--white mdl-cell mdl-cell--12-col mdl-grid">
+
+<div class="mdl-cell mdl-cell--3-col">
+            Show: </br>
+<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+  <span class="mdl-radio__label">All Question</span>
+</label></br>
+<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+  <span class="mdl-radio__label">Unused Question</span>
+</label></div>
+<div class="mdl-cell mdl-cell--3-col">
+</br>
+<select class="mdl-shadow--2dp mdl-color--white select" id="questype" name="questype" >
+
+<option value="">Question Type </option>
+{% for qtype in questype %}
+
+<option value="{{ qtype.0 }}" {% ifequal request.GET.questype qtype.0|slugify %}selected{% endifequal %}>{{ qtype.1 }}</option>
+    {% endfor %}
+</select>
+</div>
+
+<div class="mdl-cell mdl-cell--3-col">
+</br>
+<select class="mdl-shadow--2dp mdl-color--white select" id="usercategory" name="usercategory">
+<option value="">Question Category</option>
+    {% for ucat in usercat %}
+<option value="{{ ucat.id }}" {% ifequal request.GET.usercategory ucat.id|slugify %}selected{% endifequal %}>{{ ucat.name }}</option>
+    {% endfor %}
+
+</select>
+</div>
+
+<div class="mdl-cell mdl-cell--3-col">
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sample3">
+    <label class="mdl-textfield__label" for="sample3">Search Question...</label>
+  </div>
+</form>
+</div>
+          </div>
+        {% endblock %}
 
 {% block mainsectioncontent %}
 {% for ques in questionbank %}
@@ -19,7 +65,7 @@
                   Show Options
                </a><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                 Edit
-               </a><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+               </a><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="return deleteques({{ ques.pk }})">
                  Delete
                  </a><a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
                  Used In

@@ -75,6 +75,7 @@
   </head>
   <body>
   {% block body %}
+      {% block bodycontent %}
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
  {% block content %}
      {% block header %}
@@ -340,6 +341,7 @@ Export Question
      {% endblock %}
 {% endblock %}
     </div>
+      {% endblock %}
       {% block svg1 %}
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position: fixed; left: -1000px; height: -1000px;">
         <defs>
